@@ -1,6 +1,6 @@
 package com.ecommerce.microcommerce.model;
 
-public class Character {
+public class Personnage {
 
     private String name ;
     private int ID;
@@ -14,9 +14,9 @@ public class Character {
     //constructeur avec 3 arguments
 
 
-    public Character (String nomJoueur, int Identifiant , boolean typeWarrior ) {
+    public Personnage(String nomJoueur, int Identifiant , boolean typeWarrior ) {
         this.name = nomJoueur;
-        this.ID = Identifiant;
+        this.ID = Identifiant; 
         this.type = typeWarrior;
     }
 
