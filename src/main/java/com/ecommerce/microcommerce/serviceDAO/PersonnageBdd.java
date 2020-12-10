@@ -6,8 +6,10 @@ import com.ecommerce.microcommerce.model.Personnage;
 import java.util.ArrayList;
 
 public class PersonnageBdd {
-    public static ArrayList<Personnage> getListCharacter(){
-        ArrayList <Personnage> listPersonnage=new ArrayList<Personnage>();
+
+    ArrayList <Personnage> listPersonnage=new ArrayList<Personnage>();
+
+    public ArrayList<Personnage>getListCharacter(){
         listPersonnage.add(new Personnage("Gandalf", 0, false));
         listPersonnage.add(new Personnage("Melchior", 1, false));
         listPersonnage.add(new Personnage("Chaussette", 2, false));
@@ -42,4 +44,5 @@ public class PersonnageBdd {
 
         return listPersonnage;
     }
+
 }
