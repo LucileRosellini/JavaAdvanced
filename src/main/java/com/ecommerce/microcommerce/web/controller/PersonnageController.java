@@ -32,6 +32,11 @@ public class PersonnageController {
 
     }
 
+   @DeleteMapping(value="/personnage/{id}")
+    public Personnage SupprimerUnPersonnage(@PathVariable int id){
+        return personnageDao.delete(id);
+   }
+
     @PostMapping(value = "/personnages")
     public ResponseEntity AjouterPersonnage(@RequestBody Personnage personnage) {
         if (personnage == null) {

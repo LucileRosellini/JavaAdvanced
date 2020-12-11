@@ -32,4 +32,15 @@ public class PersonnageDaoImpl implements PersonnageDao{
         personnageBdd.listPersonnage.add(personnage);
         return personnage;
     }
+
+   @Override
+    public Personnage delete(int id){
+        for(Personnage personnage: personnageBdd.getListPersonnages()){
+            if (personnage.getID()==id){
+                personnageBdd.listPersonnage.remove(personnage);
+                return personnage;
+            }
+          }
+        return null;
+    }
 }

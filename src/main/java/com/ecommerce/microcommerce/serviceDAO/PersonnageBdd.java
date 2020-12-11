@@ -18,7 +18,7 @@ public class PersonnageBdd {
 
             )
     );
-    
+
     public ArrayList<Personnage> getListPersonnages(){
         return listPersonnage;
     }
