@@ -6,6 +6,8 @@ public class Personnage{
     private int ID;
     private boolean type;
 
+    public Personnage() {
+    }
 
     //ICI Declaration des attributs de character
     //ID NAME CLASSE PERSO
@@ -14,11 +16,13 @@ public class Personnage{
     //constructeur avec 3 arguments
 
 
+
     public Personnage(String nomJoueur, int Identifiant , boolean typeWarrior ) {
         this.name = nomJoueur;
         this.ID = Identifiant;
         this.type = typeWarrior;
     }
+
 
 
     public String getName() {

@@ -1,24 +1,25 @@
 package com.ecommerce.microcommerce.serviceDAO;
 import com.ecommerce.microcommerce.model.Personnage;
-import com.ecommerce.microcommerce.serviceDAO.PersonnageBdd;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 
+
+
 @Repository
 public class PersonnageDaoImpl implements PersonnageDao{
 
-   private static PersonnageBdd personnageBdd =new PersonnageBdd();
+    private PersonnageBdd personnageBdd =new PersonnageBdd();
 
 
     @Override
     public ArrayList<Personnage> findAll() {
-        return personnageBdd.getListCharacter();
+        return personnageBdd.getListPersonnages();
     }
 
     @Override
     public Personnage findById(int id) {
-        for (Personnage personnage : personnageBdd.getListCharacter()) {
+        for (Personnage personnage : personnageBdd.getListPersonnages()) {
             if(personnage.getID()== id){
                 return personnage;
             }
@@ -28,7 +29,7 @@ public class PersonnageDaoImpl implements PersonnageDao{
 
     @Override
     public Personnage save(Personnage personnage) {
-        personnageBdd.getListCharacter().add(personnage);
+        personnageBdd.listPersonnage.add(personnage);
         return personnage;
     }
 }
