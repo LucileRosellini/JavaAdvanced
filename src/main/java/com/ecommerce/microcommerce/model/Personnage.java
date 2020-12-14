@@ -1,10 +1,15 @@
 package com.ecommerce.microcommerce.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 public class Personnage{
 
     private String name ;
     private int ID;
     private boolean type;
+
+    //@JsonIgnore
+
 
     public Personnage() {
     }
@@ -21,6 +26,7 @@ public class Personnage{
         this.name = nomJoueur;
         this.ID = Identifiant;
         this.type = typeWarrior;
+
     }
 
 
@@ -48,6 +54,8 @@ public class Personnage{
     public void setType(boolean type) {
         this.type = type;
     }
+
+
 }
 
 

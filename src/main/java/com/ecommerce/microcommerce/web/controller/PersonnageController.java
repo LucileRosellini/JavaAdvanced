@@ -1,6 +1,7 @@
 package com.ecommerce.microcommerce.web.controller;
 
 import com.ecommerce.microcommerce.model.Personnage;
+import com.ecommerce.microcommerce.serviceDAO.PersonnageBdd;
 import com.ecommerce.microcommerce.serviceDAO.PersonnageDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -54,6 +55,26 @@ public class PersonnageController {
 
     }
 
+    @PutMapping(value = "/personnage/{id}")
+    public ResponseEntity MettreAjour (@RequestBody Personnage personnage,@PathVariable int id){
+
+        PersonnageBdd personnageBdd =new PersonnageBdd();
+        if(personnage ==null){
+            return ResponseEntity.notFound().build();
+        }
+        if(personnageBdd.listPersonnage.size()<id){
+            return ResponseEntity.noContent().build();
+        }
+
+        Personnage personnage3 = personnageDao.update(personnage);
+
+        URI location = ServletUriComponentsBuilder
+                .fromCurrentRequest()
+                .path("/{id}")
+                .buildAndExpand(personnage3.getID())
+                .toUri();
+        return ResponseEntity.created(location).build();
+    }
 
 }
 
