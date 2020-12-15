@@ -6,5 +6,7 @@ public interface PersonnageDao{
     public ArrayList<Personnage>findAll();
     public Personnage findById(int id);
     public Personnage save(Personnage product);
+
+    Personnage update(Personnage newPersonnage);
 }
 

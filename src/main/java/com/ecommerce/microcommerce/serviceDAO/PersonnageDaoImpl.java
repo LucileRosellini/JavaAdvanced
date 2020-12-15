@@ -32,4 +32,21 @@ public class PersonnageDaoImpl implements PersonnageDao{
         personnageBdd.listPersonnage.add(personnage);
         return personnage;
     }
+
+    @Override
+    public Personnage update(Personnage newPersonnage){
+        //for(Personnage personnage: personnageBdd.getListPersonnages()){
+        //if (personnage.getID()==newPersonnage.getID()){
+        // int id = personnageBdd.listPersonnage.indexOf(personnage);
+        //personnageBdd.listPersonnage.set(id,newPersonnage);
+        //return newPersonnage;
+        // }
+        //}
+        //return null;
+        Personnage personnageUdated=findById(newPersonnage.getID());
+        personnageUdated.setName(newPersonnage.getName());
+        personnageUdated.setType(newPersonnage.getType());
+        return personnageUdated;
+    }
+
 }
